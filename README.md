@@ -57,8 +57,7 @@ else:
 
 ### and
 ```python
-True and True
-
+print (True and True)
 ```
 ## 字符串
 ```python
@@ -67,6 +66,18 @@ x
 o
 ''')
 
+```
+### 占位符
+
+|占位符|替换内容|
+|----|---|
+|%d|整数 double|
+|%f|浮点 float|
+|%s|字符串 string|
+|%x|十六进制 hex|
+
+```python
+print('Hi, %s, you have $%d.dd %xd %f ' % ('Michael', 1000000,0xab,0.33))
 ```
 ## 方法 
 ### ord() 获取字符串的整数表述
