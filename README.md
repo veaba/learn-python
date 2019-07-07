@@ -2,6 +2,7 @@
 
 ## 变量
 - 大小写英文、数字或者`_`的组合，且不能数字开头
+- 没有关键字声明，没有类型
 ## 关键字
 - print
 - input
@@ -9,13 +10,37 @@
 - ord
 - `b'ABC'`
 - `r''` 表示 `''`内部字符串默认不转译
+- `del x `删除某个变量
 ## 运算符
 - `=` 赋值
 - `/` 除法
 - `//`地板除,取整
+### 算数运算符 TODO
+### 比较运算符 TODO
+### 赋值运算符 TODO
+### 位运算符 TODO
+### 逻辑运算符 TODO
+### 成员运算符 TODO
+### 身份运算符 TODO
+### 运算优先级 TODO
+
 ## 语法
 - 注释 
 > # print('xx')
+## 数据类型
+- Number数字 ——不可变数据
+	- int
+	- float
+	- bool
+	- complex 复数
+- String 字符串 ——不可变数据
+- Tuple 元组 不可变数据
+- List 列表 ——可变数据
+- Set 集合 ——可变数据
+- Dictionary 字典 ——可变数据
+## 注释
+- `#` 单行
+- `'''`/`""" ` 多行注释
 
 ## 数据结构
 ###
@@ -85,3 +110,15 @@ print('Hi, %s, you have $%d.dd %xd %f ' % ('Michael', 1000000,0xab,0.33))
 ### input()
 ### encode
 ### print()
+### type 查看数据类型
+
+```python
+a=111
+print(type(a))
+
+```
+### isinstance
+```python
+a=652
+isinstance(a,int)
+```
