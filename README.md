@@ -1,4 +1,7 @@
 ## learn python
+## 链接/文档/指引
+- Python官方的一些QA https://docs.python.org/zh-cn/3/faq/programming.html#performance
+
 ## 疑问
 - python 变量不会提升
 ```python
@@ -9,6 +12,7 @@ print(a)
 - 二进制符合转十进制
 - 十进制如何转二进制
 - 随机数，报错
+> 随机数，`.py`的文件名不能是`random`，否则无法引入module，从而报错
 ```python
 import random
 
@@ -174,6 +178,8 @@ else:
 print (True and True)
 ```
 ## 字符串
+- 字符串，单引号或者双引号创建，这一点和JavaScript一样
+- 字符串链接也和JS一样,使用 `+`加号来实现
 ```python
 print('''
 x
@@ -181,18 +187,109 @@ o
 ''')
 
 ```
-### 占位符
+
+### Python 转义符
+
+|转义字符|描述|
+|-------|----|
+|`\`（在行尾时）|续行符|
+|`\\`|反斜杠符号|
+|`\'`|单引号|
+|`\"`|双引号|
+|`\a`|响铃|
+|`\b`|退格(backspace)|
+|`\000`|空|
+|`\n`|换行符|
+|`\v`|纵向字符表|
+|`\t`|横向字符表|
+|`\r`|回车|
+|`\f`|换页|
+|`\oyy`|八进制，yy代表字符，\o12代表换行|
+|`\xyy`|十六进制，yy代表字符，\x0a代表换行|
+|`\other`|其他字符以普通格式输出|
+|||
+
+### 占位符/字符串格式化
 
 |占位符|替换内容|
 |----|---|
-|%d|整数 double|
-|%f|浮点 float|
-|%s|字符串 string|
-|%x|十六进制 hex|
-
+|`%c`||
+|`%d`|整数 double|
+|`%f`|浮点 float|
+|`%s`|字符串 string|
+|`%x`|格式化十六进制 hex|
+|`%X`|格式化十六进制（大写） hex|
+|`%u`|格式化无符号整形，什么叫无符号整形|
+|`%o`|格式化无符号八进制|
+|`%e`|科学计数法格式化浮点数|
+|`%E`|同%e|
+|`%g`|%f 和 %e的简写|
+|`%G`|%f 和 %E简写|
+|`%p`|用十六进制格式化变量的地址|
+|||
 ```python
 print('Hi, %s, you have $%d.dd %xd %f ' % ('Michael', 1000000,0xab,0.33))
 ```
+### Python字符串运算符
+|操作符|描述|
+|-----|----|
+|`+`||
+|`*`||
+|`[]`||
+|`[:]`||
+|`in`||
+|`not in`||
+|`r/R`||
+|`%`|格式化字符|
+|||
+
+### 三引号
+> 可以使用特殊字符和引号，比如html代码等
+
+### Unicode字符串/Python字符串内建函数
+- capitalize()第一个字符串转大写
+> 
+- center(width,fillChar) 指定宽度填充字符
+> 
+- count(str,beg=0,end=len(string)) 返回str在string里面出现的次数，
+- bytes.decode(encoding="utf-8",error="strict")
+> 
+- encode(encoding="UTF-8",errors="strict")
+- endswith(suffix,beg=0,end=len(string))
+- expandtabs(tabsize=0)
+- find(str,beg=0,end=len(string))
+- index(str,beg=0,end=len(string))
+- isalnum()
+- isalpha()
+- isdigit()
+- islower()
+- isnumeric()
+- isspace()
+- istitle()
+- isupper()
+- join(seq)
+- len(string)
+- ljust(width[.fillchar])
+- lower()
+- maketrans()
+- max(str)
+- min(str)
+- replace(old,new[,max])
+- rfind(str,beg=0,end=len(string))
+- rindex(str,beg=0,end=len(string))
+- rjust(width,[,fillchar])
+- rstrip()
+- split(str="",num=string.count(str))
+- splitline([keepends])
+- startswith(substr,beg=0,end=len(string))
+- strip([chars])
+- swapcase()
+- title()
+- translate(table,deletechars="")
+- upper()
+- zfill(widht)
+- isdecimal()
+- 
 ## 方法 
 ### ord() 获取字符串的整数表述
 ### chr()编码转为对应字符
