@@ -19,6 +19,44 @@ import random
 print(random.random())
 
 ```
+
+## 数据类型
+- Number数字 ——不可变数据
+	- int
+	- float
+	- bool
+	- complex 复数
+- String 字符串 ——不可变数据
+- Tuple 元组 不可变数据
+- List 列表 ——可变数据
+- Set 集合 ——可变数据
+- Dictionary 字典 ——可变数据
+
+## 列表
+### 快速创建列表
+```python
+alist=range(5)
+print(list(alist))
+
+```
+## 元组
+### 快速创建元组
+```python
+atup=range(5)
+print(tuple(atup))
+```
+
+### 元组生成字典
+```python
+tup1 = (1, 3, 5)
+obj4 = dict.fromkeys(tup1)
+obj5 = dict.fromkeys(tup1, "hello")
+print(obj4)
+print(obj5)
+
+```
+
+
 ## 变量
 - 大小写英文、数字或者`_`的组合，且不能数字开头
 - 没有关键字声明，没有类型
@@ -119,17 +157,6 @@ print(random.random())
 ## 语法
 - 注释 
 > # print('xx')
-## 数据类型
-- Number数字 ——不可变数据
-	- int
-	- float
-	- bool
-	- complex 复数
-- String 字符串 ——不可变数据
-- Tuple 元组 不可变数据
-- List 列表 ——可变数据
-- Set 集合 ——可变数据
-- Dictionary 字典 ——可变数据
 ## 注释
 - `#` 单行
 - `'''` 单引号多行注释
@@ -307,4 +334,16 @@ print(type(a))
 ```python
 a=652
 isinstance(a,int)
+```
+
+## 循环迭代
+
+### for
+
+```python
+test = [541564, 5, 654, 656, 5]
+array = ["维", "护", "世", "界", "和", "平"]
+for x in test + array:
+    print(x, end=" ")
+
 ```

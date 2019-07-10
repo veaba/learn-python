@@ -1,7 +1,8 @@
-# list 是python 最常见的数据类型
+# list 是python 最常见的数据类型,就是数组
 
-test = [541564,5,654,656,5]
-
+test = [1, 3, 5, 7, 9]
+odd = [2, 4, 6, 8, 10]
+array = ["维", "护", "世", "界", "和", "平"]
 print(test[0])
 print(test[1])
 print(test[2])
@@ -17,10 +18,87 @@ print(test[-5])
 
 # 重复 输出两次
 
-print(test*2)# [541564, 5, 654, 656, 5, 541564, 5, 654, 656, 5]
+print(test * 2)  # [541564, 5, 654, 656, 5, 541564, 5, 654, 656, 5]
 
 test.append("你好")
 print(test)
 
-test.pop()#移除末尾
+test.pop()  # 移除末尾
 print(test)
+
+# 删除列表、即删除数组，del 似乎没有返回值，无法进行赋值
+del test[2]
+print(test)
+
+# 列表长度
+print(len(test))
+
+# 列表组合 +
+print(test + array)
+
+# 重复*
+print(test * 2)
+
+# 判断是否存在列表中
+print("世" in array)  # True
+print("世界" in array)  # False
+
+# 迭代list
+for x in test + array:
+    print(x, end=" ")
+
+# 截取和拼接
+print(array[-3])
+print(array[1:2])
+
+# 嵌套树,二维数组
+print([test, array])
+
+
+# 列表最大值
+print(max(test))
+# 列表最小值
+print(min(odd))
+
+# 元组转为列表
+tup = ("中", "国")
+print(list(tup))
+
+# 末尾添加
+# 统计出现的次数
+# 末尾添加一次性，类似一个JS 中的concat
+# test.extend(odd)
+# print(test)
+
+# 快速创建数组
+print(list(range(5)))
+
+# 类似js中splice，只是单个
+array.insert(2, ["银", "河"])
+array.insert(5, "的")
+
+# pop 移除一个元素，默认是最后一个
+array.pop(2)
+print(array)
+
+# 移除匹配的元素
+array.remove("的")
+print(array)
+
+# 逆向
+array.reverse()
+print(array)
+
+# 排序list.sort( key=None, reverse=False)
+array.sort()
+print(array)
+
+# clear 清空列表
+array.clear()
+print(array)
+
+# copy 复制列表 -> 类似 test[:]
+print(test.copy())
+
+
+
