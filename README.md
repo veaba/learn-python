@@ -61,6 +61,7 @@ print(obj5)
 - 大小写英文、数字或者`_`的组合，且不能数字开头
 - 没有关键字声明，没有类型
 ## 关键字
+- end，结果输出到同一行，在末尾添加字符
 - print
 - input
 - chr
@@ -347,3 +348,28 @@ for x in test + array:
     print(x, end=" ")
 
 ```
+### while
+
+- 只有一行时候可以写成为一行
+### while else语句
+
+### break可以跳出for的循环体
+
+### range函数，遍历数字序列
+## 判断
+- python 没有switch-case语句
+- 0 为false
+### if
+### elif
+### else
+
+## 外部脚本
+```python
+# 键盘输入
+age=int(input("请输入xxx:"))
+
+# 回车执行
+input("click enter out")
+
+```
+
