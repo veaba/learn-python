@@ -20,6 +20,13 @@ print(random.random())
 
 ```
 5. 数字1 如何转为字符1
+> str(1) => '1'
+
+6. 月份或者秒数，未满10如何快速补零，在转为时间格式的时候
+
+7. 如何读取任意的一行？
+8. TODO 如果写入中文汉字？
+9. raise关键字
 ## 数据类型
 - Number数字 ——`不可变数据`
 	- int
@@ -66,6 +73,7 @@ print(obj5)
 - print
 - input
 - chr
+- raise
 - ord
 - `b'ABC'`
 - `r''` 表示 `''`内部字符串默认不转译
@@ -319,12 +327,18 @@ print('Hi, %s, you have $%d.dd %xd %f ' % ('Michael', 1000000,0xab,0.33))
 - zfill(widht)
 - isdecimal()
 - 
-## 方法 
+
+## 方法/函数
+- 区别：
+	- 函数手动self，方法不要传
+	- 函数，需要类名去调用，方法，用对象去调用
 ### ord() 获取字符串的整数表述
 ### chr()编码转为对应字符
-### input()
-### encode
-### print()
+### input()  读键盘输入
+### encode()
+### decode()
+### range函数
+### print() 打印函数
 ### enumerate()函数,遍历得到索引值和值
 ### type 查看数据类型
 
@@ -338,6 +352,26 @@ print(type(a))
 a=652
 isinstance(a,int)
 ```
+### items()方法
+### zip函数
+### reversed函数，逆序
+### sorted函数排序 
+### dir()函数,导入模块定义的其他名称
+### str()函数：用户易读，数字转为字符串
+### repr()函数：产生一个解释器易读的表达式形式
+### format() 字符串填充的方法，
+> print('{}xx:,{}oo'.format("hello","world"))
+> print("{0:.3f}",format(math.pi)) # Pi保留小数点后三位
+
+> 表格格式化
+```python
+table = {'Google': 1, 'Runoob': 2, 'Taobao': 3};
+for name,number in table.items():
+	print("{0:10} ==> {1:10d}".format(name,number))
+
+```
+
+### open(filename,mode) 
 
 ## 循环迭代
 
@@ -545,3 +579,180 @@ print(dir(builtins))
 - vars
 - zip
 ### global 和monlocal关键字
+
+
+## module
+
+### import sys 
+```text
+>>> import sys
+>>> sys.ps1='爱>'
+爱>
+```
+### import your_module
+### form xxx import oo
+Python 的 from 语句让你从模块中导入一个指定的部分到当前命名空间中
+
+### from...import * 
+- 把一个模块的所有内容全都导入到当前的命名空间也是可行的
+- 那些下划线_ 开头的名字无法导入,而是作为私有的属性
+
+### __name__属性，如果是__main__自己的本身运行，否则是别人在引用
+
+
+### 包package，点模块名称
+
+### 从一个包中导入*
+- 包定义文件 `__init__.py` 中包含一个叫`__all__`的列表变量 
+
+## 文件
+
+### f.write 写一个文件内容，并返回写入的长度
+
+### f.close()
+### f.flush()
+### f.fileno()
+### f.isatty()
+### f.read()
+### f.readline([size])
+### f.readline([sizeint]) 
+若给定sizeint>0，返回总和大约为sizeint字节的行, 实际读取值可能比 sizeint 较大, 因为需要填充缓冲区。
+### f.seek(offset[whence])
+### f.tell()
+### f.truncate([size]) 从size开始阶段，无size则从当前位置。阶段后面被删除
+### f.write(str)
+### f.writelines(squence) 写入一个序列字符串列表
+
+
+## os(62个)
+### os.access(path,mode)
+### os.chdir(path)
+### os.chflags(path,flogs)
+### os.chmod(path,mode)
+### os.chown(path,uid,gid)
+### os.chroot(path)
+### os.close(fd)
+### os.closerange(fd_low,fd_high)
+### os.dup(fd)
+### os.dup2(fd,fd2)
+### os.fchdir(fd)
+### os.fchmod(fd,mode)
+### os.fchown(fd,uid,gid)
+### os.fdatasync(fd)
+### os.fdopen(fd[,mode[,bufzie]])
+### os.fpathconf(fd,name)
+### os.fstat(fd)
+### os.fstatvfs(fd)
+### os.fsync(fd)
+### os.ftruncate(fd,length)
+### os.getcwd()
+### os.getcwdu()
+### os.istty(fd)
+### os.lchflags(path,flags)
+### os.lchmod(path,mode)
+### os.lchown(path,uid,gid)
+### os.link(src,dst) 
+### os.listdir(path)
+### os.lseek(fd,pos,how)
+### os.lstat(path)
+### os.major(device)
+### os.makedev(major,minor)
+### os.makedirs(path[,mode])
+### os.minor(device)
+### os.mkdir(path,[,mode])
+### os.mkfifo(path,[,mode])
+### os.mknod(filename[,mode=0600,device])
+### os.open(file,flags[,mode])
+### os.openpty()
+### os.pathconf(path,name)
+### os.pip()
+### os.popen(command[,mode[,bufsize]])
+### os.read(fd,n)
+### os.readlink(path)
+### os.remove(path)
+### os.removedirs(path)
+### os.rename(src,dst)
+### os.renames(old,new)
+### os.rmdir(path)
+### os.stat(path)
+### os.stat_float_times([newvalue])
+### os.statvfs(path)
+### os.symlink(src,dst)
+### os.tcgetpgrp(fd)
+### os.tcsetpgrp(fd,pg)
+### os.ttyname(fd)
+### os.unlink()
+### os.utime(path,time)
+### os.walk(top[.topdown=True,onerror=None[,followlinks=False]])
+### os.write(fd,str)
+### os.path模块
+
+
+## 错误和异常
+
+### 语法错误
+### 异常
+### 异常处理
+```python
+while True:
+	try:
+		x= int (input("输入个数字"))
+		break
+	except ValueError:
+		print("不对，请重输入")
+
+```
+
+### 预定义的清理行为
+确保文件f总总是被关闭的
+```python
+with open("xx.txt") as f:
+	for line in f:
+		print(line,end=" ")
+
+```
+
+
+## 面向对象
+
+### class 类。
+属性和方法的集合。每个对象共用的方法和属性，对象是类的实例
+### method 方法。
+类中定义的函数
+### 类变量。
+整个实例化对象中是共用的，类变量定义在类中且在函数体之外，类变量通常不作为实例变量使用
+### 数据成员。
+类变量或者实例变量用于处理类 及其实例对象的相关数据
+### 方法重写。
+从父类继承的方法不能满足子类的需求，需要对齐进行改写，这个方法叫覆盖(override)，也叫方法的重写
+### 局部变量。
+方法中的变量，只作用于当前实例的类
+### 实例变量。
+在类中的声明中，属性是用变量来表示的，这种变量叫实例变量，类声明的内部，但在类的其他成员的方法之外。属于单独的类型的属性变量
+### 继承。
+派生类derived class 继承基类base class的字段(属性)和方法，
+继承允许把一个派生类的对象作为基类对象对待。
+派生类会覆盖基类的任何方法
+方法中可以调用基类的同名方法
+### 实例化。
+创建一个类型的实例，类的具体对象，一个过程.
+### 对象
+通过类定义的数据结构实例，对象包括两个数据成员（类变量、实例变量）的方法
+
+
+### 构造方法 __init__ 调用类的时候会自动去调用
+
+### self代表类的实例，而非类
+
+
+### class 的方法
+
+
+### 多继承
+### 方法重写
+### 类的私有属性
+### 类的方法
+### 私有方法
+### 实例
+### 类的专用方法
+### 运算符重载
