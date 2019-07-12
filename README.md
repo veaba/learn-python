@@ -3,15 +3,15 @@
 - Python官方的一些QA https://docs.python.org/zh-cn/3/faq/programming.html#performance
 
 ## 疑问
-- python 变量不会提升
+1. python 变量不会提升
 ```python
 # 顺序不能反着
 a=99
 print(a)
 ```
-- 二进制符合转十进制
-- 十进制如何转二进制
-- 随机数，报错
+2. 二进制符合转十进制
+3. 十进制如何转二进制
+4. 随机数，报错
 > 随机数，`.py`的文件名不能是`random`，否则无法引入module，从而报错
 ```python
 import random
@@ -19,18 +19,19 @@ import random
 print(random.random())
 
 ```
-
+5. 数字1 如何转为字符1
 ## 数据类型
-- Number数字 ——不可变数据
+- Number数字 ——`不可变数据`
 	- int
 	- float
 	- bool
 	- complex 复数
-- String 字符串 ——不可变数据
-- Tuple 元组 不可变数据
-- List 列表 ——可变数据
-- Set 集合 ——可变数据
-- Dictionary 字典 ——可变数据
+- String 字符串 ——`不可变数据`
+- Tuple 元组 `不可变数据`
+
+- List 列表 ——`可变数据`
+- Set 集合 ——`可变数据`
+- Dictionary 字典 ——`可变数据`
 
 ## 列表
 ### 快速创建列表
@@ -310,7 +311,7 @@ print('Hi, %s, you have $%d.dd %xd %f ' % ('Michael', 1000000,0xab,0.33))
 - split(str="",num=string.count(str))
 - splitline([keepends])
 - startswith(substr,beg=0,end=len(string))
-- strip([chars])
+- strip([chars]) 雷同js中的trim()，移除首位空格
 - swapcase()
 - title()
 - translate(table,deletechars="")
@@ -324,6 +325,7 @@ print('Hi, %s, you have $%d.dd %xd %f ' % ('Michael', 1000000,0xab,0.33))
 ### input()
 ### encode
 ### print()
+### enumerate()函数,遍历得到索引值和值
 ### type 查看数据类型
 
 ```python
@@ -373,3 +375,173 @@ input("click enter out")
 
 ```
 
+
+## 作用域
+- 只有module、class、函数(def、lambda)才会引入新的作用域
+- if/elif/esle、try/except、for/while 定义的变量，外部可以访问
+### 本地作用域
+### 闭包函数外函数作用域
+### 全局作用域
+### 内置作用域
+```python
+import builtins
+
+# dir(builtins)
+
+print(dir(builtins))
+
+```
+- ArithmeticError
+- AssertionError
+- AttributeError
+- BaseException
+- BlockingIOError
+- BrokenPipeError
+- BufferError
+- BytesWarning
+- ChildProcessError
+- ConnectionAbortedError
+- ConnectionError
+- ConnectionRefusedError
+- ConnectionResetError
+- DeprecationWarning
+- EOFError
+- Ellipsis
+- EnvironmentError
+- Exception
+- False
+- FileExistsError
+- FileNotFoundError
+- FloatingPointError
+- FutureWarning
+- GeneratorExit
+- IOError
+- ImportError
+- ImportWarning
+- IndentationError
+- IndexError
+- InterruptedError
+- IsADirectoryError
+- KeyError
+- KeyboardInterrupt
+- LookupError
+- MemoryError
+- ModuleNotFoundError
+- NameError
+- None
+- NotADirectoryError
+- NotImplemented
+- NotImplementedError
+- OSError
+- OverflowError
+- PendingDeprecationWarning
+- PermissionError
+- ProcessLookupError
+- RecursionError
+- ReferenceError
+- ResourceWarning
+- RuntimeError
+- RuntimeWarning
+- StopAsyncIteration
+- StopIteration
+- SyntaxError
+- SyntaxWarning
+- SystemError
+- SystemExit
+- TabError
+- TimeoutError
+- True
+- TypeError
+- UnboundLocalError
+- UnicodeDecodeError
+- UnicodeEncodeError
+- UnicodeError
+- UnicodeTranslateError
+- UnicodeWarning
+- UserWarning
+- ValueError
+- Warning
+- WindowsError
+- ZeroDivisionError
+- __build_class__
+- __debug__
+- __doc__
+- __import__
+- __loader__
+- __name__
+- __package__
+- __spec__
+- abs
+- all
+- any
+- ascii
+- bin
+- bool
+- breakpoint
+- bytearray
+- bytes
+- callable
+- chr
+- classmethod
+- compile
+- complex
+- copyright
+- credits
+- delattr
+- dict
+- dir
+- divmod
+- enumerate
+- eval
+- exec
+- exit
+- filter
+- float
+- format
+- frozenset
+- getattr
+- globals
+- hasattr
+- hash
+- help
+- hex
+- id
+- input
+- int
+- isinstance
+- issubclass
+- iter
+- len
+- license
+- list
+- locals
+- map
+- max
+- memoryview
+- min
+- next
+- object
+- oct
+- open
+- ord
+- pow
+- print
+- property
+- quit
+- range
+- repr
+- reversed
+- round
+- set
+- setattr
+- slice
+- sorted
+- staticmethod
+- str
+- sum
+- super
+- tuple
+- type
+- vars
+- zip
+### global 和monlocal关键字
