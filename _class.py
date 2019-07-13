@@ -1,3 +1,4 @@
+# coding=utf-8
 """
 @desc 面向对象
 
@@ -89,9 +90,86 @@ class Li:
         print(self.parent, self.children)
 
 
-home = Li("爹娘", "孩子", "狗狗",66)
+home = Li("爹娘", "孩子", "狗狗", 66)
 home.eat()
 print(home.parent)
 print(home.children)
 print(home.age)
+
+
 # print(home.__dog)
+
+
+# 方法重写
+class Class1:
+    def a_methods(self):
+        print("class1 父类a_methods的方法")
+
+    def b_methods(self):
+        print("class1 父类b_methods的方法")
+
+
+class Class2(Class1):
+    def a_methods(self):
+        print("class2 子类a_methods的方法")
+
+    def c_methods(self):
+        print("class2 子类c_methods的方法")
+
+
+c = Class2()
+c.a_methods()
+c.b_methods()
+c.c_methods()
+super(Class2, c).a_methods()  # 什么意思：用子类对象调用父类已被覆盖的方法
+
+
+# 多继承,TODO
+
+# class Speaker():
+#     name = "Coll"
+#     topic = ""
+#
+#     def __init__(self, n, t):
+#         self.name = n
+#         self.topic = t
+#
+#     def speak(self):
+#         print("xxxx")
+#
+#
+# class Teacher(Speaker, Class1):
+#     job = ""
+#
+#     def __init__(self, n, a, w, g, t):
+#         Speaker.__init__(self, n, a, w, g)
+#         Class1.__init__(self, n, a, w, g)
+#
+#
+# test = Teacher("xxx", "xxx", "xx")
+# test.speak()
+
+
+# 运算符重载
+
+class Vector:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+
+    # TODO?
+    def __str__(self):
+        # print("__str__:", self)
+        return "Vector (%d, %d)" % (self.a, self.b)
+
+    # 此处的other
+    def __add__(self, other):
+        # print("self:", self)
+        # print("other:", other)
+        return Vector(self.a + other.a, self.b + other.b)
+
+
+v1 = Vector(6, 9)
+v2 = Vector(8, 12)
+print(v1, v2)
+print(v1 + v2)

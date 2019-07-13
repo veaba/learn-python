@@ -6,6 +6,10 @@ import random
 # 随机
 print(random.random())  # 0.7605868477680534
 
+# 整数的随机数
+
+print(random.randint(0.9))
+
 # 有范围的条件随机数
 print(random.uniform(99, 100))  # 99.9339876248865
 
