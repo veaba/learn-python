@@ -825,3 +825,55 @@ print(v1 + v2)
 ### 性能度量
 
 ### 测试模块
+
+## socket编程
+
+### socket对象-服务器端套接字
+- `s.bind()` (host,port)
+- `s.listen()` TCP监听，backlog指定在拒绝连接之前，至少1，一般设置为5即可
+- `s.accept()` 被动接受TCP客户端连接
+### socket对象-客户端套接字
+- `s.connect()`
+- `s.connect_ex()`
+### socket对象-公共用用途的套接字函数
+- `s.recv()`
+- `s.send()`
+- `s.sendall()`
+- `s.recvfrom()`
+- `sendto()`
+- `s.close()`
+- `s.getpeername()`
+- `s.getsockname()`
+- `s.setsockopt(level,optname,value)` 设置socket超时，浮点单位s，
+- `s.getsocketopt(leve,optname[,buflen])`
+- `s.settimeout(timeout)`
+- `s.gettimetout()`
+- `s.fileno()`
+- `s.setblocking(flag)`
+- `s.makefile()`
+
+## Python 如何实现HTTP服务- 网页服务
+- httplib
+- urllib
+- xmlrpclib
+## Python 如何实现NNTP服务- 帖子
+- nntplib
+## Python 如何实现FTP服务- 文件传输
+- ftplib
+- urllib
+## Python 如何实现SMTP服务- 发送邮件
+- smtplib
+## Python 如何实现POP3服务- 接收邮件
+- poplib
+## Python 如何实现IMAP4服务- 获取邮件
+- imaplib
+## Python 如何实现Telnet服务-命令行
+- telnetlib
+## Python 如何实现Gopher服务-信息查找
+- gopherlib
+- urllib
+
+## 多线程
+## XML解析
+## JSON
+## Mongodb
