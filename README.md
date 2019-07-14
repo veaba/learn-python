@@ -30,6 +30,8 @@ print(random.random())
 10. 运行python文件，打印了一堆以前的日志
 11. 交换变量
 ```python
+a=1
+b=2
 a,b=b,a
 ```
 12. 判断是否是数字
@@ -873,7 +875,152 @@ print(v1 + v2)
 - gopherlib
 - urllib
 
-## 多线程
+## 多线程 (TODO后续再学习)
+
+【优点】：
+- 可以把占据长时间中的任务放到后台去处理
+- 程序的运行速度可能加快
+- 对于用户输入、读写、网络收发，可以释放内存占用等资源
+
+【特点】：
+- 线程可以被抢占（中断）
+- 在其他线程运行时，线程可以暂时被搁置（睡眠）——线程的退让
+
+【线程分类】：
+- 内核线程：又操作系统内核创建和撤销
+- 用户线程：不需要内核支持而在用户程序中实现的线程
+
+【Python线程模块】：
+- _thread
+- threading(推荐)
+
+### 线程模块 
+### threading 模块创建线程
+### 线程同步
+### 线程优先级队列（Queue）
+
 ## XML解析
 ## JSON
+### json.dumps()编码
+|Python|JSON|
+|---   |----|
+|dict|object|
+|list,tuple|array|
+|str|string|
+|int,float,int-& float-derived enums|number|
+|True|true|
+|False|false|
+|None|null|
+|||
+### json.loads()解码
+|JSON|Python|
+|----|------|
+|object|dict|
+|array|list|
+|string|str|
+|number(int)|int|
+|number(real)|float|
+|true|True|
+|false|False|
+|null|None|
+|||
 ## Mongodb
+
+## 时间
+```python
+from datetime import  datetime
+print(datetime.now().strftime("%Y-%m-%d %H:%M:%S")) # 2019-07-14 20:09:45
+```
+- %a 本地简化星期名称 比如sun
+- %A 本地完成星期名称 Sunday
+- %b 本地简化月份的名称 Jul
+- %B 本地完成月份名称 July
+- %c 本地响应的日期表示和时间表示 'Sun Jul 14 20:24:02 2019'
+- %j 年内的一天(001-366) 195
+- %w 星期(0-6)，星期天为一个星期的开始
+- %W 一年中的星期数（00-53）星期一位星期的开始 27
+- %Y 年份 四位年份表示(0000-9999)
+- %m 月份 (0-12)
+- %d 天 (0-31)
+- %H 时 24小时制(0-23)
+- %l 12小时制(0-12)
+- %M 分(00-59)
+- %p 本地A.M 和P.M PM
+- %S 秒(00-59)
+- %U 一年中的星期数(00-53)，第几个星期，星期天位星期的开始
+- %y 两位数的年份表示(00-99)
+- %x 本地相应的日期表示 07/14/19
+- %X 本地相应的时间表示 20:30:16
+- %Z 当前时区的名称，空字符：''
+- %% %号本身
+
+## 内置函数
+- abs()
+- all()
+- any()
+- dict()
+- dir()
+- help()
+- hex()
+- min()
+- next()
+
+- slice()
+- divmod()
+- id()
+- object()
+- sorted()
+- ascii()
+- enumerate()
+- input()
+- oct()
+- staticmethod()
+- bin()
+- eval()
+- int()
+- open()
+- str()
+- bool()
+- exec()
+- isinstance()
+- ord()
+- sum()
+- bytearray()
+- filter()
+- issubclass()
+- pow()
+- super()
+- bytes()
+- float()
+- iter()
+- print()
+- tuple()
+- callable()
+- format()
+- len()
+- property()
+- type()
+- chr()
+- frozenset()
+- list()
+- range()
+- vars()
+- classmethod()
+- getattr()
+- delattr()
+- setattr()
+- locals()
+- repr()
+- zip()
+- compile()
+- globals()
+- map()
+- reversed()
+- __import__()
+- complex()
+- hasattr()
+- max()
+- round()
+- hash()
+- memoryview()
+- set()
