@@ -5,9 +5,9 @@ import smtplib
 from email.mime.text import MIMEText
 from email.utils import formataddr
 
-qq_sender = "908662421@qq.com"
+qq_sender = "xxx@qq.com"
 qq_pass = "xxxxxx"
-qq_user = "908662421@qq.com"
+qq_user = "xxx@qq.com"
 
 
 def mail():
