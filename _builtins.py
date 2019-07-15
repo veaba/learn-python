@@ -1,7 +1,7 @@
 """
 @desc 内置作用域，内置函数
 """
-import __builtin__
+import builtins
 
 # dir(builtins)
 
