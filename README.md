@@ -390,7 +390,7 @@ for name,number in table.items():
 test = [541564, 5, 654, 656, 5]
 array = ["维", "护", "世", "界", "和", "平"]
 for x in test + array:
-    print(x, end=" ")
+    print(x)
 
 ```
 ### while
@@ -427,10 +427,10 @@ input("click enter out")
 ### 全局作用域
 ### 内置作用域
 ```python
-import builtins
-
+#import builtins
+#import __builtin__
+import __builtin__
 # dir(builtins)
-
 print(dir(builtins))
 
 ```
@@ -717,7 +717,7 @@ while True:
 ```python
 with open("xx.txt") as f:
 	for line in f:
-		print(line,end=" ")
+		print(line)
 
 ```
 
@@ -925,6 +925,8 @@ print(v1 + v2)
 |null|None|
 |||
 ## Mongodb
+- https://pypi.org/project/pymongo/
+
 
 ## 时间
 ```python
@@ -1024,3 +1026,65 @@ print(datetime.now().strftime("%Y-%m-%d %H:%M:%S")) # 2019-07-14 20:09:45
 - hash()
 - memoryview()
 - set()
+
+## redis
+-  https://pypi.org/project/redis/
+
+### pip安装
+> pip install redis
+
+### python 使用redis
+```python
+def redis_get_keys():
+    import redis
+    host = "xxxx"
+    port = 6379
+    r = redis.Redis(host, port, db=1, password="password")
+    keys = r.keys('*')
+    return keys
+
+
+redis_get_keys()
+
+```
+
+## python 设置和获取windows的环境变量
+
+### 永久改变
+- https://blog.csdn.net/doots/article/details/86705182
+
+### 添加到系统变量
+    os.system("setx BAIDU_REDIS_PASSWORD xxx")
+    os.system("setx ALIYUN_HOST ooo")
+### 只是临时改变
+```python
+import os
+print(os.environ)
+# 设置
+os.environ["xx"]="xxx"
+print(os.environ["xx"])
+
+```
+
+### setx 永久方式，但需要重启机器
+```cmd
+// 设置到用户变量里面
+setx xx ooo
+
+// 设置到环境变量里面
+setx /M oo xx
+
+// 在新的cmd下，会出来
+echo %xx%
+
+// 但在idea下没办法出来，需要重启机器吧
+print(os.environ["BAIDU_HOST"])
+print(os.environ["BAIDU_REDIS_PASSWORD"])
+print(os.environ["ALIYUN_HOST"])
+
+// 或者 os.system，需要重启   
+print(os.system("echo %xx%"))    
+print(os.system("echo %BAIDU_HOST%"))    
+print(os.system("echo %BAIDU_REDIS_PASSWORD%"))    
+print(os.system("echo %ALIYUN_HOST%"))    
+```

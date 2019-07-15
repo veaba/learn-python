@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2aa1c6f6-620c-4393-84a6-d379142ab5f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/_calendar.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_json.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/threading.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bultins.py" beforeDir="false" afterPath="$PROJECT_DIR$/_builtins.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/json.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_builtins.py" beforeDir="false" afterPath="$PROJECT_DIR$/_builtins.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/string-functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/string-functions.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,8 +18,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_builtins.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="57">
+              <caret line="3" column="18" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -31,10 +28,19 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="233">
-                <caret line="1011" column="10" lean-forward="true" selection-start-line="1011" selection-start-column="10" selection-end-line="1011" selection-end-column="10" />
+              <first_editor relative-caret-position="288">
+                <caret line="927" column="2" lean-forward="true" selection-start-line="927" selection-start-column="2" selection-end-line="927" selection-end-column="35" />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/string-functions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -55,7 +61,13 @@
       <find>time</find>
       <find>%w</find>
       <find>内置</find>
+      <find>utf-8</find>
+      <find>18</find>
+      <find>redis</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -100,15 +112,16 @@
         <option value="$PROJECT_DIR$/_json.py" />
         <option value="$PROJECT_DIR$/_calendar.py" />
         <option value="$PROJECT_DIR$/_builtins.py" />
+        <option value="$PROJECT_DIR$/string-functions.py" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="260" />
-    <option name="y" value="20" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -116,6 +129,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -127,7 +141,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -153,7 +166,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python._calendar">
+  <component name="RunManager" selected="Python.string-functions">
     <configuration name="_calendar" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="learn-python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -264,20 +277,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="socket_client" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="string-functions" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="learn-python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="D:\Program Files (x86)\Python\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/socket_client.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/string-functions.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -310,19 +323,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.py" />
-      <item itemvalue="Python.socket_client" />
       <item itemvalue="Python._email" />
       <item itemvalue="Python.threading" />
       <item itemvalue="Python._json" />
       <item itemvalue="Python._calendar" />
+      <item itemvalue="Python.string-functions" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.string-functions" />
         <item itemvalue="Python._calendar" />
         <item itemvalue="Python._json" />
         <item itemvalue="Python.threading" />
         <item itemvalue="Python._email" />
-        <item itemvalue="Python.socket_client" />
       </list>
     </recent_temporary>
   </component>
@@ -346,6 +359,11 @@
       <workItem from="1563031614832" duration="43000" />
       <workItem from="1563031671079" duration="2447000" />
       <workItem from="1563094070422" duration="11344000" />
+      <workItem from="1563175968569" duration="2087000" />
+      <workItem from="1563179200393" duration="1979000" />
+      <workItem from="1563181195596" duration="1948000" />
+      <workItem from="1563188936015" duration="2688000" />
+      <workItem from="1563192368029" duration="839000" />
     </task>
     <task id="LOCAL-00001" summary="update placeholder str">
       <created>1554993542962</created>
@@ -365,18 +383,17 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31714000" />
+    <option name="totallyTimeSpent" value="41255000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49919224" visible="true" weight="0.19189766" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49919224" visible="true" weight="0.20255864" />
       <window_info id="Structure" order="1" sideWeight="0.50080776" side_tool="true" weight="0.18550107" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3286334" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32827735" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -385,8 +402,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.329718" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.6279827" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.54555315" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.6273023" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.5449621" />
       <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="bottom" id="Inspection Results" order="14" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -424,6 +441,7 @@
     <SUITE FILE_PATH="coverage/learn_python$str.coverage" NAME="str Coverage Results" MODIFIED="1554993103345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/learn_python$_calendar.coverage" NAME="_calendar Coverage Results" MODIFIED="1563107557691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/learn_python$_url.coverage" NAME="_url Coverage Results" MODIFIED="1563027274011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/learn_python$string_functions.coverage" NAME="string-functions Coverage Results" MODIFIED="1563187372639" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/learn_python$tuple.coverage" NAME="tuple Coverage Results" MODIFIED="1562505953113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/learn_python$socket_client.coverage" NAME="socket_client Coverage Results" MODIFIED="1563096225438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/learn_python$list.coverage" NAME="list Coverage Results" MODIFIED="1562505723867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -510,13 +528,7 @@
     <entry file="file://$PROJECT_DIR$/file/foo.log">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/file/foo_copy.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/file/foo_copy.log" />
     <entry file="file://$PROJECT_DIR$/x.log" />
     <entry file="file://$PROJECT_DIR$/_os.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -542,13 +554,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files (x86)/Python/Lib/email/quoprimime.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/Program Files (x86)/Python/Lib/email/quoprimime.py" />
     <entry file="file://$PROJECT_DIR$/aurl.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -622,20 +628,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files (x86)/Python/Lib/socket.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="213" column="69" selection-start-line="213" selection-start-column="31" selection-end-line="213" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/Python/Lib/smtplib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/Program Files (x86)/Python/Lib/socket.py" />
+    <entry file="file://C:/Program Files (x86)/Python/Lib/smtplib.py" />
     <entry file="file://$PROJECT_DIR$/_email.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -656,13 +650,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/json.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/json.py" />
     <entry file="file://$PROJECT_DIR$/_json.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
@@ -696,16 +684,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_builtins.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="57">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/string-functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="233">
-            <caret line="1011" column="10" lean-forward="true" selection-start-line="1011" selection-start-column="10" selection-end-line="1011" selection-end-column="10" />
+          <first_editor relative-caret-position="288">
+            <caret line="927" column="2" lean-forward="true" selection-start-line="927" selection-start-column="2" selection-end-line="927" selection-end-column="35" />
           </first_editor>
           <second_editor />
         </state>
