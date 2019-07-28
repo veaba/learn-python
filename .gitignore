@@ -2,3 +2,4 @@ file
 .vscode
 __pycache__
 venv
+.idea
