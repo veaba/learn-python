@@ -54,7 +54,6 @@ print(array[1:2])
 # 嵌套树,二维数组
 print([test, array])
 
-
 # 列表最大值
 print(max(test))
 # 列表最小值
@@ -100,5 +99,11 @@ print(array)
 # copy 复制列表 -> 类似 test[:]
 print(test.copy())
 
+# 去重
+ids = [111, 3, 32, 3, 5, 66, 6, 5]
+new_ids = list(set(ids))
+print(new_ids)
 
-
+# 排序
+new_ids.sort()
+print(new_ids)

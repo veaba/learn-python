@@ -20,7 +20,8 @@
 """
 import time
 
-print(time.time())  # 1562914852.1520033
+
+# print(time.time())  # 1562914852.1520033
 
 
 def repair_zero(num):
@@ -48,7 +49,7 @@ def write_file():
     f.close()
 
 
-write_file()
+# write_file()
 
 
 # 写一个文件，如果不是字符串，需要转换
@@ -95,7 +96,7 @@ def readline():
     print(f.readline())
 
 
-readline()
+# readline()
 
 
 # read 方法,指定数目返回，或者是全部返回字符串
@@ -106,7 +107,7 @@ def read():
     f.close()
 
 
-read()
+# read()
 
 
 # tell 函数，当前操作的字节数（读、）,返回字节长度
@@ -118,7 +119,7 @@ def tell():
     f.close()
 
 
-tell()
+# tell()
 
 
 # seek()改变文件的位置，f.seek(offset,from_what)函数，默认0
@@ -139,4 +140,13 @@ def with_file():
         print(read_data)
 
 
-with_file()
+# with_file()
+
+# 追加文本插入
+
+def append_file():
+    with open('file/append_file.log', 'a') as f:
+        f.write(today + ": Python is a good program language\n")
+
+
+append_file()

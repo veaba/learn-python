@@ -4,49 +4,48 @@
 
 """
 
-# def parser_mongo_logo():
-#     # errors = 'ignore'
-#     f = open("file/aliyun-mongo.log", "r",errors='ignore')
-#     for line in f:
-#         print(line)
-#     f.close()
-
-
-# 2017-12-04T23:02:43.484+0800 I NETWORK  [thread1] connection accepted from 1.202.68.84:40992 #6238 (1 connection now open)
-# 2017-12-04T23:03:13.961+0800 I NETWORK  [thread1] connection accepted from 113.63.94.68:39718 #6239 (2 connections now open)
-
 import re
 
-# def _search():
-#     print(re.search("www", "www.xx.com").span())  # (0,3)
-#     print(re.search("www", "www.xx.com").span())  # (0,3)
-#     print(re.search("com", "www.xx.com").span())  # (0,3)
-#
-
-# def _match():
-#     print(re.match('www', 'www.runoob.com').span())  # 在起始位置匹配 (0,3)
-#     print(re.match('com', 'www.runoob.com'))  # 不在起始位置匹配
-#     print("测试")
+ip_list = []  # ip list
+port_list = []  # port list
 
 
-# _match()
-
-# parser_mongo_logo()
-# 2017-12-04T23:02:43.484+0800 I NETWORK  [thread1] connection accepted from 1.202.68.84:40992 #6238 (1 connection now open)
-attack = "2017-12-04T23:02:43.484+0800 I NETWORK  [thread1] connection accepted from 1.202.68.84:40992 #6238 (1 connection now open) "
-phone = "2004-959-559 # 这是一个国外电话号码"
-
-
-def _findall():
-    pattern = re.compile(r'^.* from .*$')
-    res = pattern.findall(attack)
-    print(res)
+def _findall(line):
+    pattern_ip_port = re.compile(r'^.*from (.+?) \(\d .*$')  # ['1.202.68.84:40992 #6238']
+    ip_port = pattern_ip_port.findall(line)
+    str_ip_port = ''.join(ip_port)
+    str_ip = re.sub(r':.*$', "", str_ip_port)  # 1.202.68.84
+    str_port = re.sub(r'^.*:(.+?) #', '', str_ip_port)  # 40992
+    ip_list.append(str_ip)
+    port_list.append(str_port)
 
 
-_findall()
-# def _sub():
-#     print(re.sub(r'\(.*$', "", attack))# 替换
-#     print(re.sub(r'#.*$', "", phone))
-#
-#
-# _sub()
+def parser_mongo_logo():
+    with open("file/aliyun-mongo.log", "r", errors='ignore') as f:
+        for line in f:
+            _findall(line)
+    set_ip_list = list(set(ip_list))
+    set_port_list = list(set(port_list))
+
+    print("ip列表：", set_ip_list)
+    print("端口列表：", set_port_list)
+
+    # 不去重
+    with open('file/aliyun_ip_list_all.yml', 'w') as f:
+        for ip in ip_list:
+            if len(ip) != 0:
+                f.write(ip + '\n')
+    with open('file/aliyun_port_list_all.yml', 'w') as f:
+        for port in port_list:
+            if len(port) != 0:
+                f.write(port + '\n')
+    # 写到一个文件里面去,去重
+    with open('file/aliyun_ip_list.yml', 'w') as f:
+        for ip in set_ip_list:
+            f.write(ip + '\n')
+    with open('file/aliyun_port_list.yml', 'w') as f:
+        for port in set_port_list:
+            f.write(port + '\n')
+
+
+parser_mongo_logo()

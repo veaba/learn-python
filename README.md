@@ -48,6 +48,15 @@ a,b=b,a
 - List 列表 ——`可变数据`
 - Set 集合 ——`可变数据`
 - Dictionary 字典 ——`可变数据`
+13. list 转字符
+
+```python
+
+list1=[12,123,56,99]
+list2=[str(1) for i in list1]
+print(' '.join(list2))
+
+```
 
 ## 列表
 ### 快速创建列表
