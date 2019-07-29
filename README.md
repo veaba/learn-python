@@ -34,7 +34,9 @@ a=1
 b=2
 a,b=b,a
 ```
-12. 判断是否是数字
+12. 判断是否是数字？
+13. 如何可选参数？
+
 
 ## 数据类型
 - Number数字 ——`不可变数据`
@@ -59,13 +61,17 @@ print(' '.join(list2))
 ```
 
 ## 列表
+
 ### 快速创建列表
+
 ```python
 alist=range(5)
 print(list(alist))
 
 ```
+
 ## 元组
+
 ### 快速创建元组
 ```python
 atup=range(5)
@@ -73,6 +79,7 @@ print(tuple(atup))
 ```
 
 ### 元组生成字典
+
 ```python
 tup1 = (1, 3, 5)
 obj4 = dict.fromkeys(tup1)
@@ -82,11 +89,18 @@ print(obj5)
 
 ```
 
+### 元组取值 和list 取值一样
+
+tup1[1]
 
 ## 变量
+
 - 大小写英文、数字或者`_`的组合，且不能数字开头
 - 没有关键字声明，没有类型
+
+
 ## 关键字
+
 - end，结果输出到同一行，在末尾添加字符
 - print
 - input
@@ -96,10 +110,13 @@ print(obj5)
 - `b'ABC'`
 - `r''` 表示 `''`内部字符串默认不转译
 - `del x `删除某个变量
+
 ## 运算符
+
 - `=` 赋值
 - `/` 除法
 - `//`地板除,取整
+
 ### 算数运算符 TODO
 
 |算术运算符|描述|例子|
@@ -112,6 +129,7 @@ print(obj5)
 |**|幂，返回x的y次幂||
 |//|取整除，向下取接近除数的整数||
 ||||
+
 ### 比较运算符 TODO
 
 |比较运算符|描述|例子|
@@ -183,8 +201,11 @@ print(obj5)
 |||
 
 ## 语法
+
 - 注释 
-> # print('xx')
+print('xx')
+
+
 ## 注释
 - `#` 单行
 - `'''` 单引号多行注释
@@ -312,6 +333,7 @@ print('Hi, %s, you have $%d.dd %xd %f ' % ('Michael', 1000000,0xab,0.33))
 - encode(encoding="UTF-8",errors="strict")
 - endswith(suffix,beg=0,end=len(string))
 - expandtabs(tabsize=0)
+- expandtabs(tabsize=0)
 - find(str,beg=0,end=len(string))
 - index(str,beg=0,end=len(string))
 - isalnum()
@@ -350,6 +372,13 @@ print('Hi, %s, you have $%d.dd %xd %f ' % ('Michael', 1000000,0xab,0.33))
 - 区别：
 	- 函数手动self，方法不要传
 	- 函数，需要类名去调用，方法，用对象去调用
+- 如何可选参数?
+
+### 函数参数
+    - 必须参数
+    - 关键字参数
+    - 默认参数
+    - 不定长参数
 ### ord() 获取字符串的整数表述
 ### chr()编码转为对应字符
 ### input()  读键盘输入
@@ -438,9 +467,9 @@ input("click enter out")
 ```python
 #import builtins
 #import __builtin__
-import __builtin__
+#import __builtin__
 # dir(builtins)
-print(dir(builtins))
+#print(dir(builtins))
 
 ```
 - ArithmeticError
@@ -709,8 +738,17 @@ Python 的 from 语句让你从模块中导入一个指定的部分到当前命�
 ## 错误和异常
 
 ### 语法错误
+
 ### 异常
+
 ### 异常处理
+- `except OSError as err:`
+- `except ValueError:`
+- `except IOError:`
+- `except ZeroDivisionError as err:`
+- `except FileNotFoundError as err:`
+- `except UnicodeDecodeError as err:`
+
 ```python
 while True:
 	try:
@@ -720,8 +758,10 @@ while True:
 		print("不对，请重输入")
 
 ```
-
+### 抛出异常
+-
 ### 预定义的清理行为
+
 确保文件f总总是被关闭的
 ```python
 with open("xx.txt") as f:
@@ -734,27 +774,45 @@ with open("xx.txt") as f:
 ## 面向对象
 
 ### class 类。
+
 属性和方法的集合。每个对象共用的方法和属性，对象是类的实例
+
 ### method 方法。
+
 类中定义的函数
+
 ### 类变量。
+
 整个实例化对象中是共用的，类变量定义在类中且在函数体之外，类变量通常不作为实例变量使用
+
 ### 数据成员。
+
 类变量或者实例变量用于处理类 及其实例对象的相关数据
+
 ### 方法重写。
+
 从父类继承的方法不能满足子类的需求，需要对齐进行改写，这个方法叫覆盖(override)，也叫方法的重写
+
 ### 局部变量。
+
 方法中的变量，只作用于当前实例的类
+
 ### 实例变量。
+
 在类中的声明中，属性是用变量来表示的，这种变量叫实例变量，类声明的内部，但在类的其他成员的方法之外。属于单独的类型的属性变量
 ### 继承。
+
 派生类derived class 继承基类base class的字段(属性)和方法，
 继承允许把一个派生类的对象作为基类对象对待。
 派生类会覆盖基类的任何方法
 方法中可以调用基类的同名方法
+
 ### 实例化。
+
 创建一个类型的实例，类的具体对象，一个过程.
+
 ### 对象
+
 通过类定义的数据结构实例，对象包括两个数据成员（类变量、实例变量）的方法
 
 
@@ -765,11 +823,14 @@ with open("xx.txt") as f:
 
 ### class 的方法
 
-
 ### 多继承,尚未掌握
+
 ### 方法重写
+
 ### 类的私有属性,__ 两个下划线开头
+
 ### 类的方法
+
 ### 私有方法
 - `__init__`      构造函数，在生成对象时候调用
 - `__del__`       析构函数，释放对象时使用
@@ -784,9 +845,13 @@ with open("xx.txt") as f:
 - `__truediv__`   除运算
 - `__mod__`       求余、取模预算
 - `__pow__`       乘方
+
 ### 实例
+
 ### 类的专用方法
+
 ### 运算符重载
+
 ```python
 # 运算符重载
 
