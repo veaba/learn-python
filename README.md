@@ -1,8 +1,10 @@
 ## learn python
+
 ## 链接/文档/指引
 - Python官方的一些QA https://docs.python.org/zh-cn/3/faq/programming.html#performance
 
 ## 疑问
+
 1. python 变量不会提升
 ```python
 # 顺序不能反着
@@ -36,7 +38,22 @@ a,b=b,a
 ```
 12. 判断是否是数字？
 13. 如何可选参数？
+14. list 转字符
 
+```python
+
+list1=[12,123,56,99]
+list2=[str(1) for i in list1]
+print(' '.join(list2))
+
+```
+15. 默认下，字典，写成json是 单引号的key，如何转为双引号
+16. pass 关键字是做什么的
+```python
+pass
+```
+
+--------------------
 
 ## 数据类型
 - Number数字 ——`不可变数据`
@@ -50,15 +67,6 @@ a,b=b,a
 - List 列表 ——`可变数据`
 - Set 集合 ——`可变数据`
 - Dictionary 字典 ——`可变数据`
-13. list 转字符
-
-```python
-
-list1=[12,123,56,99]
-list2=[str(1) for i in list1]
-print(' '.join(list2))
-
-```
 
 ## 列表
 
@@ -68,6 +76,98 @@ print(' '.join(list2))
 alist=range(5)
 print(list(alist))
 
+```
+
+## 字典（js中的对象）
+
+
+### 字典排序等
+```python
+def dirt_sort():
+    obj = {
+        "127.0.0.1": 54,
+        "115.192.59.226": 33,
+        "124.160.26.190": 192,
+        "74.82.47.4": 6,
+        "140.205.225.204": 100,
+        "120.55.13.109": 69,
+        "47.52.210.105": 25,
+        "93.174.95.106": 1,
+        "140.205.225.190": 75,
+        "196.52.43.53": 2,
+        "47.94.52.138": 56,
+        "47.52.210.90": 21,
+        "74.82.47.3": 12,
+        "121.42.203.142": 37,
+        "119.23.138.247": 72}
+    print(obj.values())
+    print(obj.keys())  
+    # list_obj_value = list(obj.values())
+    # list_obj_key = list(obj.keys())
+
+    # print(list_obj_value)
+    # print(list_obj_key)
+    # 默认对obj的键从小到大排序
+    # print("排序:", sorted(obj))
+    # 默认对obj的键从小到大排序，取得元组的排序
+    print("排序:", sorted(obj.items()))
+
+    # 结果
+    print("对值排序：", sorted(obj.items(), key=lambda x: x[1]))
+   
+    print("对值逆序：", sorted(obj.items(), key=lambda x: x[1], reverse=True))
+    
+    # 需要转回字典
+    print("对值逆序：", dict(sorted(obj.items(), key=lambda x: x[1], reverse=True))) 
+
+```
+
+### list 转为字典
+
+```python
+
+def list_to_dict():
+    a_list = ["127.0.0.1", "99,99,9,99"]
+
+    print(dict.fromkeys(a_list))
+
+
+list_to_dict() # {'127.0.0.1': None, '99,99,9,99': None}
+
+```
+
+### 元组转为字典
+
+```python
+a_tup=[('127.0.0.1', 192)]
+print(dict(a_tup)) #{'127.0.0.1': 192}
+
+```
+
+### 字典相减，目的为了移除部分
+```python
+from collections import Counter
+def dict_subtract():
+    parent_dict = {"a": 999, "b": 888, "c": 777, "d": 666}
+    child_dict = {"d": 666}
+
+    print(dict(Counter(parent_dict)-Counter(child_dict)))
+
+
+dict_subtract()
+```
+
+### 字典相加，目的，为了融合
+```python
+from collections import Counter
+def dict_subtract():
+    parent_dict = {"a": 999, "b": 888, "c": 777, "d": 666}
+    child_dict = {"d": 666}
+
+    print(dict(Counter(parent_dict)+Counter(child_dict)))
+
+
+dict_subtract()
 ```
 
 ## 元组
@@ -82,7 +182,7 @@ print(tuple(atup))
 
 ```python
 tup1 = (1, 3, 5)
-obj4 = dict.fromkeys(tup1)
+obj4 = dict.fromkeys(tup1) 
 obj5 = dict.fromkeys(tup1, "hello")
 print(obj4)
 print(obj5)
@@ -92,6 +192,25 @@ print(obj5)
 ### 元组取值 和list 取值一样
 
 tup1[1]
+
+### 列表统计次数转为字段
+
+```python
+
+# list
+def go_list():
+    a_list = [1, 1, 1, 1, 2, 3, 4, 6, 6, 9]
+
+    obj = {}
+    for item in a_list:
+        obj[item] = str(a_list.count(item))+'次'
+    print(obj)  # {1: '4次', 2: '1次', 3: '1次', 4: '1次', 6: '2次', 9: '1次'}
+
+
+go_list()
+
+
+```
 
 ## 变量
 
