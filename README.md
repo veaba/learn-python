@@ -53,6 +53,22 @@ print(' '.join(list2))
 pass
 ```
 
+17. 文件暴露变量给其他用
+
+a.py
+
+```python
+xx=[11,22,33]
+```
+
+b.py
+
+```python
+from a import *
+
+print(a)
+```
+
 --------------------
 
 ## 数据类型
