@@ -137,7 +137,16 @@ def dirt_sort():
     print("对值逆序：", dict(sorted(obj.items(), key=lambda x: x[1], reverse=True))) 
 
 ```
+### 字段转字符
 
+```python
+dict_keys(['tf.train'])
+
+#
+
+print(''.join(obj.keys()))
+
+```
 ### list 转为字典
 
 ```python
@@ -527,6 +536,10 @@ print('Hi, %s, you have $%d.dd %xd %f ' % ('Michael', 1000000,0xab,0.33))
 ```python
 a=111
 print(type(a))
+
+
+print(type(obj) == dict)# dict
+print(type(obj)==str) #string
 
 ```
 ### isinstance
