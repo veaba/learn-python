@@ -68,7 +68,7 @@ from a import *
 
 print(a)
 ```
-
+18. python 异步编程怎么搞？
 --------------------
 
 ## 数据类型
@@ -349,6 +349,9 @@ go_list()
 - 注释 
 print('xx')
 
+## python 异步编程怎么搞？
+
+> 循环下异步的任务回来。
 
 ## 注释
 - `#` 单行
@@ -1050,6 +1053,28 @@ print(v1 + v2)
 
 ### 测试模块
 
+## 正则
+
+### 处理marddown 用到的一段代码
+
+```python
+import re
+def list_to_str(str_list,code=""):
+    if isinstance(str_list, list):
+        return code.join(str_list)
+    else:
+        return EOFError
+a_list=['aa','bb']
+st= 'while_loop(...): Repeat body while the condition cond is true.aa,擦擦,oooaAddsa.ssbb'
+
+a_str=list_to_str(a_list,"|")
+pa= re.compile(r'('+a_str+')')
+
+xx =re.sub(pa,"`"+"\\1"+"`",st)
+
+print(xx)
+# 问题。把 aa和 bb换成 `aa` `bb`
+```
 ## socket编程
 
 ### socket对象-服务器端套接字
