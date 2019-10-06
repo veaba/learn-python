@@ -103,7 +103,7 @@ def readline():
 
 def read():
     f = open("file/foo1.log", "r")
-    print(f.read())  # read(size) size 为负数，则说明素有内容都会全部读取返回,
+    print(f.read())  # read(size) size 为负数，则说明所有内容都会全部读取返回,
     f.close()
 
 
