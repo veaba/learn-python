@@ -71,6 +71,8 @@ print(a)
 18. python 异步编程怎么搞？
 
 19. python for 循环里面的任务过于长，怎么多线程处理？
+
+20. python 如何查看某个module的方法和属性：dir(xx)
 --------------------
 
 ## 数据类型
@@ -516,6 +518,36 @@ print('Hi, %s, you have $%d.dd %xd %f ' % ('Michael', 1000000,0xab,0.33))
 - zfill(widht)
 - isdecimal()
 - 
+
+## 异步编程：asyncio
+> python 由于GIL（全局锁：啥玩意？？），无法发挥多核优势
+
+[_asyncio](_asyncio.py)
+
+- 同步：先完成这个，等待，阻塞
+- 异步：完成一系列任务，取最长的时间的那个任务为总任务时间，任务之间，通过状态、通知、回调来处理调用处理结果
+
+
+### 每秒输出一行字符
+
+```python
+import time
+
+
+def hello():
+    time.sleep(1)
+
+def run():
+    for i in range(10):
+        hello()
+        print("哇哈哈：%s" % time.time())
+
+run()
+
+
+
+```
+
 
 ## 方法/函数
 - 区别：
