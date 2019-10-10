@@ -164,6 +164,12 @@ def list_to_dict():
 list_to_dict() # {'127.0.0.1': None, '99,99,9,99': None}
 
 ```
+### list key、index，用enumerate返回list
+```python
+for index,key in enumerate(f.readlines()):
+    print(index,key)
+
+```
 
 ### 元组转为字典
 

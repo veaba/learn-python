@@ -20,20 +20,22 @@ import asyncio
 #
 # # demo2：循环里面异步代码
 def the_async():
-    async def hello():
+    async def hello(i):
         await asyncio.sleep(1)
         print("异步代码：%s" % time.time())
+        return str(i)+'哈哈'
 
     loop = asyncio.get_event_loop()
 
     def run_async():
         for i in range(10):
-            loop.run_until_complete(hello())
+           x= loop.run_until_complete(hello(i))
+           print(x)
 
     run_async()
 
 #
-# the_async()
+the_async()
 
 # @asyncio.coroutine
 # def hello():
