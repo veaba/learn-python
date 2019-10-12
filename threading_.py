@@ -1,37 +1,79 @@
-"""
-@desc Python 多线程,TODO 这模块比较难，后续再学习
-【优点】：
-- 可以把占据长时间中的任务放到后台去处理
-- 程序的运行速度可能加快
-- 对于用户输入、读写、网络收发，可以释放内存占用等资源
-【特点】：
-- 线程可以被抢占（中断）
-- 在其他线程运行时，线程可以暂时被搁置（睡眠）——线程的退让
-【线程分类】：
-- 内核线程：又操作系统内核创建和撤销
-- 用户线程：不需要内核支持而在用户程序中实现的线程
-【Python线程模块】：
-- _thread
-- threading(推荐)
-"""
-
-import _thread
+import threading
 import time
 
+exit_flag=0
 
-def go(thread_name, delay):
-    count = 0
-    while count < 5:
-        time.sleep(delay)
-        count += 1
-        print("%s: %s" % (thread_name, time.ctime(time.time())))
+class ThreadDemo(threading.Thread):
+    def __init__(self,threadID,name,counter):
+        threading.Thread.__init__(self)
+        self.threadID=threadID
+        self.name=name
+        self.counter=counter
+
+    def run(self):
+        print("开始线程：",self.name)
+        print_time(self.name,self.counter,5)
+        print('退出线程：',self.name)
+
+def timeout():
+    time.sleep(5)
+    print('劳资很耗时！！！！')
+
+def print_time(threadName,delay,counter):
+    print(threadName,delay,counter)
+    timeout()
 
 
-# 创建两个线程
-try:
-    _thread.start_new_thread(go, ("thread-1", 2,))
-    _thread.start_new_thread(go, ("thread-2", 4,))
-except:
-    print("Error 启动线程失败")
-while 1:
-    pass
+start=time.time()
+# 创建线程
+thread1=ThreadDemo(1,'Thread-1',1)
+thread2=ThreadDemo(2,'Thread-2',2)
+thread3=ThreadDemo(3,'Thread-3',3)
+thread4=ThreadDemo(4,'Thread-4',4)
+thread5=ThreadDemo(5,'Thread-5',5)
+thread6=ThreadDemo(6,'Thread-1',6)
+thread7=ThreadDemo(7,'Thread-2',7)
+thread8=ThreadDemo(8,'Thread-3',8)
+thread9=ThreadDemo(9,'Thread-4',9)
+thread10=ThreadDemo(10,'Thread-5',10)
+
+# 开启线程
+
+thread1.start()
+thread2.start()
+thread3.start()
+thread4.start()
+thread5.start()
+thread6.start()
+thread7.start()
+thread8.start()
+thread9.start()
+thread10.start()
+
+thread1.join()
+thread2.join()
+thread3.join()
+thread4.join()
+thread5.join()
+thread6.join()
+thread7.join()
+thread8.join()
+thread9.join()
+thread10.join()
+
+
+
+# for 循环多线程，这里永远都是同步创建的，需要等待完成才下一步
+# threadObj={
+
+# }
+# for i in range(10):
+#     threadObj['thread_'+str(i+1)]=ThreadDemo(i+1,'Thread-'+str(i+1),str(i+1))
+#     threadObj['thread_'+str(i+1)].start()
+#     threadObj['thread_'+str(i+1)].join()
+
+    
+
+print('退出线程！！！')
+end=time.time()
+print('耗时：',end-start)
