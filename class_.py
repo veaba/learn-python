@@ -33,13 +33,37 @@ print(city.x1, city.y1)
 
 
 class Self:
+    # __xx ="我是私有属性，外面无法调用"
+    def __init__(self):
+        self.xxx='wo __init__里面的，你能调到我吗？'
+        self.__xx='hahahahah'
     def show(self):
         print(self)
-        print(self.__class__)
+        print("我是私有属性====：",self.__xx)
+
+
+    x =222
+    @staticmethod
+    def go():
+        print('我是私有属性')
+
+    @classmethod
+    def haha(cls):
+        print('类的方法：',cls.x)
+        cls.go()# 调用今天的方法
+    _aa=99
 
 
 a_self = Self()
 a_self.show()
+print("打印类的属性：",a_self.x,a_self._aa,a_self.xxx,a_self.__xx)#可以调到，毕竟绑定在实例的属性下面
+print("打印类的私有方法：",a_self.go())
+a_self.haha()
+
+# print("类的方法和属性：",dir(Self))# 打印这个类的方法和属性
+# print("实例的方法和属性：",dir(a_self))# 打印这个类的方法和属性
+
+
 
 
 # 定义一个School的类，

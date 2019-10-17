@@ -192,7 +192,7 @@ def dict_subtract():
 dict_subtract()
 ```
 
-### 字典相加，目的，为了融合
+### 字典相加，目的，为了融合，对象合并，字典合并,而且是对于ini类型的值
 ```python
 from collections import Counter
 def dict_subtract():
@@ -203,6 +203,21 @@ def dict_subtract():
 
 
 dict_subtract()
+```
+
+### 字典合并为新字典
+
+```python
+    parent_dict = {"a": 999, "b": 888, "c": 777, "d": 666}
+    child_dict = {"d": 666}
+    new_dict={**parent_dict,**child_dict}
+```
+
+### 字典导入到另外一个字典
+```python
+    parent_dict = {"a": 999, "b": 888, "c": 777, "d": 666}
+    child_dict = {"d": 666}
+    new_dict=parent_dict.update(child_dict)
 ```
 
 ## 元组
@@ -949,6 +964,16 @@ while True:
 		print("不对，请重输入")
 
 ```
+
+### 编译错误
+
+> TypeError: 'str' object is not callable
+
+> TypeError: can only concatenate str (not "dict") to str
+
+> UnicodeEncodeError: 'utf-8' codec can't encode character '\ud800' in position 319: surrogates not allowed
+
+> TypeError: 'int' object is not subscriptable
 ### 抛出异常
 -
 ### 预定义的清理行为
@@ -967,6 +992,11 @@ with open("xx.txt") as f:
 ### class 类。
 
 属性和方法的集合。每个对象共用的方法和属性，对象是类的实例
+
+
+- `_xxx` 无法被from module import ，只能被类和实例访问
+- `__xxx` 私有，只有类能自己访问，实例无法访问
+- `__xxx__` 一般是系统的。
 
 ### method 方法。
 

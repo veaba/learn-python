@@ -188,7 +188,7 @@ def dirt_sort():
     print("对值排序：", sorted(obj.items()))
 
 
-dirt_sort()
+# dirt_sort()
 
 
 # 元组转字典
