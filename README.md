@@ -20,10 +20,10 @@ bin(10) #0b1010
 3. 十进制如何转二进制
 
 ```python
-nt(0b1010) #10
+int(0b1010) #10
 ```
 
-4. 随机数，报错
+4. 随机数，报错，需要在声明时：文件名、变量名都尽可能的避开关键字
 > 随机数，`.py`的文件名不能是`random`，否则无法引入module，从而报错
 ```python
 import random
@@ -48,13 +48,16 @@ with open('a.text','w',encoding="utf-8") as f:
 
 9. raise关键字，抛出异常
 ```python
+a=11
+
 if a>10:
-    raise RuntimeError('a')
-else:
-    print('放开我，我没错')
+    print ("What?")
+    raise RuntimeError("ahaha")
+
+print("放开我，我没错")
 ```
 10. 运行python文件，打印了一堆以前的日志
-    - 和缓存有关系？？尝试删除__pycache__
+    - 和缓存有关系？？尝试在运行的路径下删除__pycache__ 目录
 11. 交换变量
 ```python
 a=1
@@ -109,7 +112,8 @@ from a import xx
 print(a)
 ```
 18. python 异步编程怎么搞？
-
+- 内置库：asynacio
+- 线程池
 19. python for 循环里面的任务过于长，怎么多线程处理？
 
 20. python 如何查看某个module或者class的方法和属：dir(xx)
