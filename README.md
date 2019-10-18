@@ -11,25 +11,50 @@
 a=99
 print(a)
 ```
-2. 二进制符合转十进制
+2. 二进制符号转十进制
+
+```python
+bin(10) #0b1010
+```
+
 3. 十进制如何转二进制
+
+```python
+nt(0b1010) #10
+```
+
 4. 随机数，报错
 > 随机数，`.py`的文件名不能是`random`，否则无法引入module，从而报错
 ```python
 import random
-
 print(random.random())
 
 ```
 5. 数字1 如何转为字符1
-> str(1) => '1'
+
+```python
+str(1) => '1'
+```
 
 6. 月份或者秒数，未满10如何快速补零，在转为时间格式的时候
 
 7. 如何读取任意的一行？
-8. TODO 如果写入中文汉字？
-9. raise关键字
+8. 如果写入中文汉字？
+```python
+with open('a.text','w',encoding="utf-8") as f:
+    f.write('中文在此')
+
+```
+
+9. raise关键字，抛出异常
+```python
+if a>10:
+    raise RuntimeError('a')
+else:
+    print('放开我，我没错')
+```
 10. 运行python文件，打印了一堆以前的日志
+    - 和缓存有关系？？尝试删除__pycache__
 11. 交换变量
 ```python
 a=1
@@ -37,7 +62,17 @@ b=2
 a,b=b,a
 ```
 12. 判断是否是数字？
+```python
+i=9
+if not isinstance(i,int) # 不是数字
+if isinstance(i,int) # 是数字
+```
 13. 如何可选参数？
+```python
+def xx(x=None):
+    print(x)
+xx()
+```
 14. list 转字符
 
 ```python
@@ -49,11 +84,16 @@ print(' '.join(list2))
 ```
 15. 默认下，字典，写成json是 单引号的key，如何转为双引号
 16. pass 关键字是做什么的
+- 空执行，什么都不做的意思
 ```python
 pass
+
+# 一般if 语句下面要有其他执行语句，但可以使用pass 这个关键字，什么都不做
 ```
 
 17. 文件暴露变量给其他用
+
+    - 此处和python module 一起的
 
 a.py
 
@@ -64,7 +104,7 @@ xx=[11,22,33]
 b.py
 
 ```python
-from a import *
+from a import xx
 
 print(a)
 ```
@@ -72,7 +112,7 @@ print(a)
 
 19. python for 循环里面的任务过于长，怎么多线程处理？
 
-20. python 如何查看某个module的方法和属性：dir(xx)
+20. python 如何查看某个module或者class的方法和属：dir(xx)
 --------------------
 
 ## 数据类型
