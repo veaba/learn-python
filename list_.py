@@ -134,4 +134,22 @@ def create_list_mode2():
 def create_list_mode3():
     xx =[i for i in range(9)]
     print(xx)
-create_list_mode3()
+# create_list_mode3()
+
+# [2, 3, 4, 5, 6, 7, 8, 9, 10]
+def create_list_mode4():
+    xx =[i+2 for i in range(9)]
+    print(xx)
+# create_list_mode4()
+
+# [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+def create_list_mode5():
+    xx =[i*2 for i in range(10)]
+    print(xx)
+# create_list_mode5()
+
+# [0, 1, 2, 3, 4, 5, 6, 7, 8]
+def create_list_mode6():
+    xx =list(range(9))
+    print(xx)
+create_list_mode6()
