@@ -109,12 +109,29 @@ def default():
     print(new_ids)
 
 
-a=[99,656,262]
-b=['add','dsada']
-print(a+b)
-o=a+b
+# a=[99,656,262]
+# b=['add','dsada']
+# print(a+b)
+# o=a+b
 
-def x(h):
-    print(h)
+# def x(h):
+#     print(h)
 
-x(o)
+# x(o)
+
+def create_list_mode1():
+    a =10
+    for i in range(a):
+        print(i)# 0-1
+
+# 创建100个长度的[2,,...,2]
+def create_list_mode2():
+    xx =[ 2 for i in range(99)]
+    print(xx)
+
+
+# 创建 [0, 1, 2, 3, 4, 5, 6, 7, 8] 数组
+def create_list_mode3():
+    xx =[i for i in range(9)]
+    print(xx)
+create_list_mode3()
