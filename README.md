@@ -125,6 +125,40 @@ python 不支持i++ 的自增运算符
 
 --------------------
 ## 举一反三：来自本人demo
+### 给Python 提交了一个反斜杠替换符不允许超过100的issues
+地址：https://bugs.python.org/issue38582%3E
+
+开发者回复更简单的例子实现：
+
+```python
+import re
+
+NUM = 99
+
+# items = [ '(001)', '(002)', '(003)', ..., '(NUM)']
+items = [r'(%03d)' % i for i in range(1, 1+NUM)]
+pattern = '|'.join(items)
+
+# repl = '\1\2\3...\NUM'
+temp = ('\\' + str(i) for i in range(1, 1+NUM))
+repl = ''.join(temp)
+
+text = re.sub(pattern, repl, '(001)')
+print(text)
+
+# if NUM == 99
+# output: (001)
+# if NUM == 100
+# output: (001@)
+# if NUM == 101
+# output: (001@A)
+```
+
+以及源码地址：https://github.com/python/cpython/blob/v3.8.0/Lib/sre_parse.py#L1022-L1036
+
+
+![](images/re-overflow.png)
+
 ### python 存储实例到数组下次再调用（TODO）
 1. new 一个实例出来耗时1-10s不等
 2. a 实例完成工作时候先不销毁，将实例存储到一个数组array里面
