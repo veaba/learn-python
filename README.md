@@ -118,11 +118,74 @@ print(a)
 
 20. python 如何查看某个module或者class的方法和属：dir(xx)
 
+21. python 自增
 
+python 不支持i++ 的自增运算符
+可以用 i+=1 来替代
 
 --------------------
 ## 举一反三：来自本人demo
+### python 存储实例到数组下次再调用（TODO）
+1. new 一个实例出来耗时1-10s不等
+2. a 实例完成工作时候先不销毁，将实例存储到一个数组array里面
+3. 下一个任务，直接从数组array里面拿实例a过来使用，减少重复创建实例的时间
 
+优化前
+```python
+# 存储实例测试
+import time
+instanceList=[]
+
+class A:
+    def __init__(self):
+        instanceList.append(self)
+        time.sleep(1)
+    def go(self,i):
+        # time.sleep(1)
+        print(i,'我被实例化拉！',time.time())
+
+
+start=time.time()
+for i in range(10):
+    a=A()
+    a.go(i)
+instanceList=[] #销毁
+end=time.time()
+print(instanceList)
+print('消耗时间：',end-start) # 消耗时间： 1.0
+
+```
+优化后：
+```python
+# 存储实例测试
+import time
+instanceList=[]
+
+class A:
+    def __init__(self):
+        instanceList.append(self)
+        time.sleep(1)
+    def go(self,i):
+        # time.sleep(1)
+        print(i,'我被实例化拉！',time.time())
+
+
+start=time.time()
+for i in range(10):
+    if len(instanceList):
+        instanceList[0].go(i)
+    else:
+        a=A()
+        a.go(i)
+
+instanceList=[] #销毁
+end=time.time()
+print(instanceList)
+print('消耗时间：',end-start) # 消耗时间： 1.0
+
+```
+
+### 截断式及嵌套式编程（瞎起名词~~）
 根据文件[ifreturn.py](ifreturn.py)文件测试，发现：
 
 截断式（先判断再执行下一层函数）比嵌套式（先进入函数再在函数内部多判断）执行时间还小！
