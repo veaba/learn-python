@@ -2,15 +2,20 @@ from multiprocessing.pool import ThreadPool
 
 import time
 
-def process(i):
+def process(i,t=1):
     print(i)
     time.sleep(1)
+    print(i,t.__hash__)
+    print(i,dir(t))
+    print(i,t.real)
     # return 
-
+def x(*o):
+    print(o)
 
 start=time.time()
 pool=ThreadPool(processes=20)
-pool.map(process,(i for i in range(2600)))
+pool.map(process,((i,pool) for i in range(2)))
+
 pool.close()
 end=time.time()
 
