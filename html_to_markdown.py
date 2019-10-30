@@ -28,8 +28,11 @@ def is_code(element):
 	if re.match(r'^.*<code>',element):
 		return True
 	else:
-		return False    
-
+		return False 
+# 剥离外边父级标签   
+def remove_parent_wrap(elementString):
+	left= re.sub(r'^<(.*?)(>)','',elementString)
+	return re.sub(r'<\/*\/([^\/]+[^\.])$','',left)
 # 判断所包围的标签还含有子标签
 def has_child(element):
 	pass
@@ -53,7 +56,10 @@ def parser_li(string):
 	# <li><a href="/api_docs/python/tf/clip_by_value"><code translate="no" dir="ltr">tf.compat.v1.clip_by_value</code></a></li>
 	# <li><a href="/api_docs/python/tf/clip_by_value"><code translate="no" dir="ltr">tf.compat.v2.clip_by_value</code></a></li>
 	for ele in temp_array:
-		pass
+		# todo 判断不存在包围子元素
+		remove_li_tag=remove_parent_wrap(ele.group())
+		text+='- '+check_what_element(remove_li_tag)+'\n'
+	return text
 
 # 将code 解析为``,
 # <code translate="no" dir="ltr">tf.compat.v2.clip_by_value</code>
@@ -71,6 +77,9 @@ def check_what_element(elementString):
 	element_name=re.sub(r'<(.*?) .*$','\\1',elementString)
 	if element_name=='code':
 		return parser_code(elementString)
+	elif element_name=='a':
+		return parser_a(elementString)
+	# todo
 	return ''
 
 	
@@ -83,7 +92,6 @@ def parser_a(elementString):
 
 	left =re.sub(r'<a(.*?)>','',elementString)
 	centerContent=re.sub(r'</a>','',left)
-	print("aaa:",centerContent)
 	return '['+check_what_element(centerContent)+']('+the_href+')'
 
 def parser_html(item):
@@ -92,9 +100,9 @@ def parser_html(item):
 		text= parser_li(item)
 	return text
 
-# x =parser_html(d)
+x =parser_html(d)
 
-# print(x)
+print(x)
 
 def tesc_code():
 	code='<code translate="no" dir="ltr">tf.compat.v2.clip_by_value</code>'
@@ -102,9 +110,12 @@ def tesc_code():
 	print("test code element:\n")
 	print(new_code)
 
-def test():
+def test_a():
 	string='<a href="/api_docs/python/tf/clip_by_value"><code translate="no" dir="ltr">tf.compat.v1.clip_by_value</code></a>'
 	x =parser_a(string)
 	print(x)
-
+def test():
+	ele= '<li><a href="/api_docs/python/tf/clip_by_value"><code translate="no" dir="ltr">tf.compat.v1.clip_by_value</code></a></li>'
+	x=remove_parent_wrap(ele)
+	print('x:',x)
 test()
