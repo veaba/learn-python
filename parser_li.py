@@ -125,15 +125,35 @@ def demo2():
             xx=re.sub(pattrn,'】',xx,count=1)
     
     print(6,xx)
-    # ul_ol_struct=re.sub(r'<ul(.*?)>','[',ul_ol_struct)
-    # ul_ol_struct=re.sub(r'</ul>',']',ul_ol_struct)
-    # ul_ol_struct=re.sub(r'<ol(.*?)>','【',ul_ol_struct)
-    # ul_ol_struct=re.sub(r'</ol>','】',ul_ol_struct)
+    ul_ol_struct=ul_ol_string
+    ul_ol_struct=re.sub(r'<ul(.*?)>','[',ul_ol_struct)
+    ul_ol_struct=re.sub(r'</ul>',']',ul_ol_struct)
+    ul_ol_struct=re.sub(r'<ol(.*?)>','[',ul_ol_struct)
+    ul_ol_struct=re.sub(r'</ol>',']',ul_ol_struct)
 
-    # print('5',ul_ol_struct) 
-    #  [[][[][]]【【】】]
+    ul_ol_struct=ul_ol_struct.replace('*','')
+    print('7',ul_ol_struct) 
+    ul_ol_struct=ul_ol_struct.replace('][','],[')
+    print(8,ul_ol_struct)
+    ul_ol_struct_array=eval(ul_ol_struct)
+    print(9,len(ul_ol_struct_array),isinstance(ul_ol_struct_array,list))
+    oo=[]
+    def recursion_array(array,i=0):
+        for item in enumerate(array):
+            k=item[0]
+            v=item[1]
+            k+=i
+            print(item)
+            oo.append(k)
+            if len(v):
+               recursion_array(item[1],k)
+        
+    recursion_array(ul_ol_struct_array)
+    # todo 确认级别
 
-
+    print(10,oo)
+    
+    # 此处的概念有点模糊了
 
 
 
