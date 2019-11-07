@@ -18,7 +18,8 @@ import re
 # 如何将一个html 的ul 组合组成数组格式的！！！
 def demo1():
     # li ='<ul><li>甲</li><li>乙</li><li>丙</li><ul><li>AA</li><li>BB</li><li>CC</li><ul><li>11</li><li>22</li><li>33</li></ul></ul><ul><li>AA</li><li>BB</li><li>CC</li><ul><li>11</li><li>22</li><li>33</li></ul></ul></ul>'
-    li ='<ul><li>11111<ul><li>222</li><ul><li>4444</li></ul></ul></li></ul>'
+    # li ='<ul><li>11111<ul><li>222</li><ul><li>4444</li></ul></ul></li></ul>'
+    li='<ul><li>111</li><li>222</li><li>333<ul><li>1111</li><li>2221</li><li>3333</li><li>4444</li></ul></li><li><ul><li>5555</li><li>6666</li><li>7777</li><li><ul><li>aaaa</li><li>bbbb</li><li>cccc</li><li>dddd</li></ul></li><ul><li>eeee</li><li>ffff</li><li>gggg</li><li>hhhh</li></ul></ul>444</li><ol><li>啊啊啊</li><li>哦哦哦</li></ol></ul>'
     a=re.sub(r'<ul(.*?)>','[',li)
     print(1,a)
     a=re.sub(r'</ul>',']',a)
@@ -48,8 +49,15 @@ def demo1():
     #=== 5 </li> "
     #a='["甲","乙","丙",["AA","BB","CC",["11","22","33"</ul></ul><ul>"AA","BB","CC",["11","22","33"</ul></ul>]'
 
-    a=re.sub(r'\]",','],',a)
+
+    a=re.sub(r',",\["',',[',a)
     print(6.1,a)
+
+    a=re.sub(r'\]",','],',a)
+    print(6.3,a)
+
+    a=re.sub(r'\],",\[','],[',a)
+    print(6.4,a)
 
     a=re.sub(r'^",\[','[',a)
     print(7,a)
@@ -74,4 +82,59 @@ def demo1():
 
     # print(a)
 
-demo1()
+
+def demo2():
+    li = '<ul><li>111</li><li>222</li><li>333<ul><li>1111</li><li>2221</li><li>3333</li><li>4444</li></ul></li><li><ul><li>5555</li><li>6666</li><li>7777</li><li><ul><li>aaaa</li><li>bbbb</li><li>cccc</li><li>dddd</li></ul></li><ul><li>eeee</li><li>ffff</li><li>gggg</li><li>hhhh</li></ul></ul>444</li><ol><li>啊啊啊</li><li>哦哦哦</li><ol><li>啊啊啊11</li><li>哦哦哦222</li></ol></ol></ul>'
+    # 移除 <li> 和 </li>
+    origin_li=li
+    li_struct=re.sub(r'(<li(.*?)>)|</li>','',li)
+    print(1,li_struct) 
+    # <ul>111222333<ul>1111222133334444</ul><ul>555566667777<ul>aaaabbbbccccdddd</ul><ul>eeeeffffgggghhhh</ul></ul>444<ol>啊啊啊哦哦哦<ol>啊啊啊11哦哦哦222</ol></ol></ul>
+    
+    new_str={
+        'a':""
+    }
+    def ah(a):
+        new_str['a']+=a.group()+'*' # 特殊字符*
+        return a.group()
+    # 移除 除了<ul 和非 </ul> <ol> </ol> todo 
+    li_struct=re.sub(r'(<ul(.*?)>)|(</ul>)|(<ol(.*?)>)|(</ol>)',ah,li_struct)
+
+    print(2,li_struct)
+
+    print('3',new_str['a'])
+    # <ul><ul></ul><ul><ul></ul><ul></ul></ul><ol><ol></ol></ol></ul>
+
+    # 4 转换为[] 【
+    ul_ol_string= new_str['a']
+    print(4,ul_ol_string)
+    ul_ol_array= ul_ol_string[0:-1].split('*') # 过滤最后一个并分割为数组
+    print(5,ul_ol_array,len(ul_ol_array))
+    # 5 循环替换原字符串
+    # todo 此时，是不是可以知道ul 是属于哪一个数组层级？
+    xx=origin_li
+    for item in ul_ol_array:
+        pattrn= re.compile(r''+item+'')
+        if item=='<ul>':
+            xx=re.sub(pattrn,'[',xx,count=1)
+        elif item=='</ul>':
+            xx=re.sub(pattrn,']',xx,count=1)
+        elif item=='<ol>':
+            xx=re.sub(pattrn,'【',xx,count=1)
+        elif item=='</ol>':
+            xx=re.sub(pattrn,'】',xx,count=1)
+    
+    print(6,xx)
+    # ul_ol_struct=re.sub(r'<ul(.*?)>','[',ul_ol_struct)
+    # ul_ol_struct=re.sub(r'</ul>',']',ul_ol_struct)
+    # ul_ol_struct=re.sub(r'<ol(.*?)>','【',ul_ol_struct)
+    # ul_ol_struct=re.sub(r'</ol>','】',ul_ol_struct)
+
+    # print('5',ul_ol_struct) 
+    #  [[][[][]]【【】】]
+
+
+
+
+
+demo2()
