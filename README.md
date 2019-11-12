@@ -127,6 +127,12 @@ python 不支持i++ 的自增运算符
 22. python bytes 转 str
 b=b'aaa'
 str(b,encoding="utf-8")
+
+23. 打印行数
+```python
+import sys
+sys._getframe().f_lineno
+```
 --------------------
 ## 举一反三：来自本人demo
 ### 给Python 提交了一个反斜杠替换符不允许超过100的issues

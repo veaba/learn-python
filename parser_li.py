@@ -157,4 +157,27 @@ def demo2():
 
 
 
-demo2()
+# demo2()
+
+
+# def demo3():
+#     array=[1,2,4,5,8,9,10,11,16] #0-8,怎么找这组数据的规律
+#     right=[18,3,7,6,12,13,14,15,17]
+#     space_string=' '
+#     array_string=['' for i in range(len(array))] # 创建长度为len(array)的数组：['', '', '', '', '', '', '', '', '']
+#     print(array_string)
+#     for i in range(len(array)-1,-1,-1):
+#         pass
+#     print('结果：',array_string)
+
+# demo3()
+
+def demo4():
+    li = '<ul><li>111</li><li>222</li><li>333<ul><li>1111</li><li>2221</li><li>3333</li><li>4444</li></ul></li><li><ul><li>5555</li><li>6666</li><li>7777</li><li><ul><li>aaaa</li><li>bbbb</li><li>cccc</li><li>dddd</li></ul></li><ul><li>eeee</li><li>ffff</li><li>gggg</li><li>hhhh</li></ul></ul>444</li><ol><li>啊啊啊</li><li>哦哦哦</li><ol><li>啊啊啊11</li><li>哦哦哦222</li></ol></ol></ul>'
+
+    ul = re.findall(r'\<ul\>[\w\W]+\<\/ul\>|\b(\w+(?![^<>]*>))\b',li)
+
+    for item in ul:
+        print(item)
+
+demo4()
