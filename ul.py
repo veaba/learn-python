@@ -2,8 +2,8 @@
 
 import re
 
-block = '<ul class="c545"><li class="dsad">111</li><li>222</li><li>333<ul><li>1111</li><li>2221</li><li>3333</li><li>4444</li></ul></li><li><ul><li>5555</li><li>6666</li><li>7777</li><li><ul><li>aaaa</li><li>bbbb</li><li>cccc</li><li>dddd</li></ul></li><ul><li>eeee</li><li>ffff</li><li>gggg</li><li>hhhh</li></ul></ul>444</li><ol><li>啊啊啊</li><li>哦哦哦</li></ol></ul>'
-
+# block = '<ul class="c545"><li class="dsad">111</li><li>222</li><li>333<ul><li>1111</li><li>2221</li><li>3333</li><li>4444</li></ul></li><li><ul><li>5555</li><li>6666</li><li>7777</li><li><ul><li>aaaa</li><li>bbbb</li><li>cccc</li><li>dddd</li></ul></li><ul><li>eeee</li><li>ffff</li><li>gggg</li><li>hhhh</li></ul></ul>444</li><ol><li>啊啊啊</li><li>哦哦哦</li></ol></ul>'
+block = '<ul><li>Class <a href="/api_docs/python/tf/keras/layers/AdditiveAttention"><code translate="no" dir="ltr">tf.compat.v1.keras.layers.AdditiveAttention</code></a></li><li>Class <a href="/api_docs/python/tf/keras/layers/AdditiveAttention"><code translate="no" dir="ltr">tf.compat.v2.keras.layers.AdditiveAttention</code></a></li></ul>'
 # 清空ul li attrs
 block = re.sub(r'<ul(.*?)>', '<ul>', block)
 block = re.sub(r'<li(.*?)>', '<li>', block)
@@ -77,7 +77,7 @@ def get_level(init=False):
     if init:
         del left_ul_level[0:]
     for item in enumerate(left_ul_index):
-        left_ul_level.append(item[0] * 2 - item[1] + 1)
+        left_ul_level.append(item[0] * 2 - item[1])
     # print('第4步,获取level：', left_ul_level)
 
 
@@ -102,6 +102,7 @@ def is_ol(string):
 def parser_ul(node, level):
     li_count = node.count('<li>')
     for index in range(li_count):
+        print('level:',level)
         node = re.sub(r'<li>', '    ' * level + '- ', node, count=1)
     node = re.sub(r'</li>', '\n', node)
     node = re.sub(r'<ul>', '', node)
