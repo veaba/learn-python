@@ -128,10 +128,21 @@ python 不支持i++ 的自增运算符
 b=b'aaa'
 str(b,encoding="utf-8")
 
-23. 打印行数
+23. python str 转bytes
+s='啊哈313adv'
+bytes(s,encoding='utf-8')
+24. 打印行数
 ```python
 import sys
 sys._getframe().f_lineno
+```
+
+25. python 实现类定时器功能
+```python
+import time
+while True:
+    time.sleep(1)
+    print(time.time(),111)
 ```
 --------------------
 ## 举一反三：来自本人demo
