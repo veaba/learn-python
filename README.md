@@ -1,5 +1,25 @@
 ## learn python
 
+## Sponsors
+
+提示：本项目开发所使用的开发工具（PyCharm Professional）受JetBrans的免费赞助，再次非常感谢JetBrans 为开源项目免费提供开发工具的项目（[JetBrans Free Open Source Licenses](https://www.jetbrains.com/community/opensource/)）
+
+
+<h2 align="center">SPONSORS</h2>
+<p align="center">
+    <a href="https://www.jetbrains.com/?from=learn-python" target="_blank" rel="noopener noreferrer"><img width="100" src="./images/sponsors-logos/jetbrains-variant-3.png" alt="Jetbrans logo">
+    </a>
+</p>
+
+<h4 align="center">
+    Thanks JetBrans Open Source Support Program
+</h4>
+
+
+
+
+
+
 ## 链接/文档/指引
 - Python官方的一些QA https://docs.python.org/zh-cn/3/faq/programming.html#performance
 
