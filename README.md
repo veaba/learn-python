@@ -15,6 +15,11 @@
     Thanks JetBrans Open Source Support Program
 </h4>
 
+<p align="center">
+<img src="./images/sponsors-logos/py-license.png">
+
+</p>
+
 
 
 
